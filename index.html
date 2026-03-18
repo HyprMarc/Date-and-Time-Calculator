@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="A beautiful neumorphism-styled date and time calculator. Find the day of any date, add durations, and explore time operations." />
+  <meta name="description"
+    content="A beautiful neumorphism-styled date and time calculator. Find the day of any date, add durations, and explore time operations." />
   <title>ChronoCalc — Date &amp; Time Operations</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <!-- Floating ambient blobs -->
   <div class="ambient-blob blob-1"></div>
@@ -20,10 +24,10 @@
     <div class="logo">
       <div class="logo-icon">
         <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="2.5"/>
-          <line x1="24" y1="24" x2="24" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-          <line x1="24" y1="24" x2="32" y2="28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <circle cx="24" cy="24" r="2.5" fill="currentColor"/>
+          <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="2.5" />
+          <line x1="24" y1="24" x2="24" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+          <line x1="24" y1="24" x2="32" y2="28" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          <circle cx="24" cy="24" r="2.5" fill="currentColor" />
         </svg>
       </div>
       <h1>Chrono<span>Calc</span></h1>
@@ -35,11 +39,22 @@
     <!-- Tab Navigation -->
     <nav id="tab-nav" class="neu-tabs">
       <button class="tab-btn active" data-tab="day-finder" id="tab-day-finder">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="18" rx="2" />
+          <line x1="16" y1="2" x2="16" y2="6" />
+          <line x1="8" y1="2" x2="8" y2="6" />
+          <line x1="3" y1="10" x2="21" y2="10" />
+        </svg>
         <span>Day Finder</span>
       </button>
       <button class="tab-btn" data-tab="date-adder" id="tab-date-adder">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="12" x2="16" y2="14"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10" />
+          <line x1="12" y1="8" x2="12" y2="12" />
+          <line x1="12" y1="12" x2="16" y2="14" />
+        </svg>
         <span>Date Adder</span>
       </button>
     </nav>
@@ -80,7 +95,11 @@
         </div>
 
         <button class="neu-btn primary" id="btn-find-day">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
           Find Day
         </button>
       </div>
@@ -173,43 +192,68 @@
         <div class="duration-grid">
           <div class="neu-input-wrap">
             <label for="da-add-years">Years</label>
-            <div class="neu-input compact">
+            <div class="neu-input">
+              <button class="spin-btn spin-down" data-target="da-add-years" data-step="-1"
+                id="da-add-years-down">−</button>
               <input type="number" id="da-add-years" value="0" min="0" />
+              <button class="spin-btn spin-up" data-target="da-add-years" data-step="1" id="da-add-years-up">+</button>
             </div>
           </div>
           <div class="neu-input-wrap">
             <label for="da-add-months">Months</label>
-            <div class="neu-input compact">
+            <div class="neu-input">
+              <button class="spin-btn spin-down" data-target="da-add-months" data-step="-1"
+                id="da-add-months-down">−</button>
               <input type="number" id="da-add-months" value="0" min="0" />
+              <button class="spin-btn spin-up" data-target="da-add-months" data-step="1"
+                id="da-add-months-up">+</button>
             </div>
           </div>
           <div class="neu-input-wrap">
             <label for="da-add-days">Days</label>
-            <div class="neu-input compact">
+            <div class="neu-input">
+              <button class="spin-btn spin-down" data-target="da-add-days" data-step="-1"
+                id="da-add-days-down">−</button>
               <input type="number" id="da-add-days" value="0" min="0" />
+              <button class="spin-btn spin-up" data-target="da-add-days" data-step="1" id="da-add-days-up">+</button>
             </div>
           </div>
           <div class="neu-input-wrap">
             <label for="da-add-hours">Hours</label>
-            <div class="neu-input compact">
+            <div class="neu-input">
+              <button class="spin-btn spin-down" data-target="da-add-hours" data-step="-1"
+                id="da-add-hours-down">−</button>
               <input type="number" id="da-add-hours" value="0" min="0" />
+              <button class="spin-btn spin-up" data-target="da-add-hours" data-step="1" id="da-add-hours-up">+</button>
             </div>
           </div>
           <div class="neu-input-wrap">
             <label for="da-add-minutes">Minutes</label>
-            <div class="neu-input compact">
+            <div class="neu-input">
+              <button class="spin-btn spin-down" data-target="da-add-minutes" data-step="-1"
+                id="da-add-minutes-down">−</button>
               <input type="number" id="da-add-minutes" value="0" min="0" />
+              <button class="spin-btn spin-up" data-target="da-add-minutes" data-step="1"
+                id="da-add-minutes-up">+</button>
             </div>
           </div>
           <div class="neu-input-wrap">
             <label for="da-add-seconds">Seconds</label>
-            <div class="neu-input compact">
+            <div class="neu-input">
+              <button class="spin-btn spin-down" data-target="da-add-seconds" data-step="-1"
+                id="da-add-seconds-down">−</button>
               <input type="number" id="da-add-seconds" value="0" min="0" />
+              <button class="spin-btn spin-up" data-target="da-add-seconds" data-step="1"
+                id="da-add-seconds-up">+</button>
             </div>
           </div>
         </div>
         <button class="neu-btn primary" id="btn-add-duration">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <line x1="12" y1="5" x2="12" y2="19" />
+            <line x1="5" y1="12" x2="19" y2="12" />
+          </svg>
           Calculate Result
         </button>
       </div>
@@ -222,7 +266,11 @@
             <span class="value" id="da-result-from">—</span>
           </div>
           <div class="result-arrow">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+              stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
           </div>
           <div class="result-to">
             <span class="label">To</span>
@@ -241,4 +289,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>

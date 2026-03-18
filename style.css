@@ -263,6 +263,7 @@ main {
   padding: 1.75rem;
   margin-bottom: 1.5rem;
   transition: var(--transition);
+  overflow: hidden;
 }
 
 .card-label {
@@ -334,13 +335,7 @@ main {
   margin: 0;
 }
 
-.neu-input.compact {
-  padding: 0;
-}
 
-.neu-input.compact input {
-  padding: 0.65rem 0.5rem;
-}
 
 /* ── Spin Buttons ── */
 .spin-btn {
@@ -372,9 +367,29 @@ main {
 /* ── Duration Grid ── */
 .duration-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   margin-bottom: 1.5rem;
+}
+
+.duration-grid .neu-input-wrap {
+  min-width: 0;
+}
+
+.duration-grid .neu-input {
+  min-width: 0;
+}
+
+.duration-grid .spin-btn {
+  width: 28px;
+  min-height: 38px;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.duration-grid .neu-input input {
+  font-size: 1rem;
+  padding: 0.55rem 0.1rem;
 }
 
 /* ── Buttons ── */
@@ -640,7 +655,7 @@ footer {
   }
 
   .duration-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
 
   .result-arrow-row {
